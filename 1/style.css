@@ -1,0 +1,25 @@
+.card {
+    margin: 40px;
+    border: 7px solid black;
+    padding: 10px;
+    background: #a2a2a2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    width: 300px;
+}
+
+img {
+    width: inherit;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background: url("https://wallpapershome.ru/images/pages/pic_h/24449.jpg");
+    background-size: cover;
+}

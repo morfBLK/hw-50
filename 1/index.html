@@ -9,19 +9,48 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="app"></div>
 <script type="text/babel">
 
-    const filmCard = props  => {
-        return React.createElement("div",
+    const FilmCard = props  => {
+        return React.createElement("div", {className: "card"},
       React.createElement("img", {src:props.img}, null),
             React.createElement("h1", null, props.filmName),
-            React.createElement("p", null, props.desc)
+            React.createElement("p", null, props.year)
         );
     };
+
+    const app = (
+        <React.Fragment>
+            <FilmCard
+            img="https://upload.wikimedia.org/wikipedia/ru/e/e5/%D0%94%D0%B6%D0%BE%D0%BD_%D0%A3%D0%B8%D0%BA.jpg"
+            filmName="Джон Уик"
+            year="2014"
+            />
+            <FilmCard
+                img="https://upload.wikimedia.org/wikipedia/ru/f/f1/John_Wick_2.jpg"
+                filmName="Джон Уик 2"
+                year="2017"
+            />
+            <FilmCard
+                img="https://upload.wikimedia.org/wikipedia/ru/1/1d/John_Wick_3.jpg"
+                filmName="Джон Уик 3"
+                year="2019"
+            />
+            <FilmCard
+                img="https://upload.wikimedia.org/wikipedia/ru/3/3b/John_Wick_4_poster.jpg"
+                filmName="Джон Уик 4"
+                year="2023"
+            />
+        </React.Fragment>
+    );
+
+    const container = document.getElementById("app");
+    ReactDOM.createRoot(container).render(app);
 
 
 </script>
