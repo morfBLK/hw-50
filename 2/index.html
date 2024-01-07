@@ -6,8 +6,96 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div id="app"></div>
+
+<script type="text/babel">
+
+    const Header = () => {
+        return (
+            <header>
+                <a>AkiPressKG</a>
+            </header>
+        );
+    };
+
+    const NavBar = () => {
+        return <nav>
+            <ul>
+                <li><a href="#">Аналитика</a></li>
+                <li><a href="#">Спорт</a></li>
+                <li><a href="#">Культура</a></li>
+                <li><a href="#">Проишествия</a></li>
+                <li><a href="#">Прочее</a></li>
+            </ul>
+        </nav>
+    };
+
+    const  ItemCard = props => {
+      return (
+          <div className="card">
+              <img src={props.img}/>
+              <h3>{props.title}</h3>
+          </div>
+      );
+    };
+
+    const Content = () => {
+        return <div className="content">
+            <h2>Новости</h2>
+            <ItemCard
+                img="https://st-0.akipress.org/cdn-st-0/qeX/7/1225940.20f561f090bb01a2b29830772fa16879.jpg"
+                title="Собираемость налога на транспорт физлиц выросла на 19% в 2023 году."
+            />
+
+            <ItemCard
+                img="https://st-0.akipress.org/cdn-st-0/qdG/U/1651347.ef030c61fd30bf8157256f2772aa5a38.jpg"
+                title="Сколько долларов продал Нацбанк в 2023 году?"
+            />
+
+            <ItemCard
+                img="https://st-0.akipress.org/cdn-st-0/qeX/7/2382456.251952e0f496ecdb9b4d0e8ffb2a3739.jpg"
+                title="В Казахстане произошло землетрясение магнитудой 4.6"
+            />
+
+            <ItemCard
+                img="https://st-0.akipress.org/cdn-st-0/qeX/5/2381657.8343e8d878caaf02b0b6b578abf7e045.jpg"
+                title="Кому и сколько должны государства Центральной Азии?"
+            />
+        </div>
+    };
+
+    const Main = () => {
+        return <div className="mainBlock">
+            <NavBar/>
+            <Content/>
+        </div>
+    };
+
+    const Footer = () => {
+        return <footer>
+            <p>© Информационное агентство АКИpress - 2001-2024</p>
+        </footer>
+    };
+
+    const app = (
+        <React.Fragment>
+            <Header/>,
+            <Main/>
+            <Footer/>
+        </React.Fragment>
+    );
+
+    const container = document.getElementById("app")
+    ReactDOM.createRoot(container).render(app)
+
+</script>
 
 </body>
 </html>
